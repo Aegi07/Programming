@@ -1,2 +1,2 @@
-# C
-For C, C++ practice
+# Programming
+Programming practice
