@@ -8,6 +8,8 @@ def get_size(generator):
     return f"size is {sys.getsizeof(generator)}"
 
 vals = gen(10)
+
+## size is constant regardless of vals
 print(get_size(vals))
 
 for i in range(5):
