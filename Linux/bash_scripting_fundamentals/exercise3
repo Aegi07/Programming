@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# this script parses today's date into day, month and year
+# then prints out the 3 components of date
+
+# get today's date in dd-mm-yy format
+DATE=$(date +%d-%m-%y)
+
+# get components of date using substitution operators
+DAY=${DATE%%-*}
+echo day $DAY
+
+MONTH=${DATE%-*}
+MONTH=${MONTH#*-}
+echo month $MONTH
+
+YEAR=${DATE##*-}
+echo year $YEAR

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# write a script that starts automatically when user logs in
+# menu script should never be terminated until user logs out
+# 4 options: 
+# 1: reset password. 2: show disk usage. 3: ping a host. 4: log out
+# bonus: modify the script such that user can use sudo to set passwords for other users
+
+
+while true ; do
+    trap "echo NOPE" INT
+    pinghost()
+    {
+        echo which host do you want to ping
+        read HOSTNAME
+        ping -c 1 $HOSTNAM
+    }
+
+    echo 'Select option: '
+    select TASK in 'change password' 'monitor disk space' 'ping a host' 'logout'
+    do
+        case $REPLY in 
+            1) TASK=passwd;;
+            2) TASK="df -h";;
+            3) TASK=pinghost;;
+            4) TASK=exit;;
+        esac
+
+        if [ -n "task" ]
+        then
+            $TASK
+            break
+        else
+            echo invalid choice, try again
+        fi
+    done
+done
