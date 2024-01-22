@@ -1,6 +1,0 @@
-cn=lara,dc=example,dc=com
-cn=lara1,dc=example,dc=com
-cn=lara2,dc=example,dc=com
-cn=lara3,dc=example,dc=com
-cn=lara4,dc=example,dc=com
-cn=lara5,dc=example,dc=com
